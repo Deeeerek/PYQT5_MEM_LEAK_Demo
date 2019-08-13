@@ -8,7 +8,8 @@ demo for memory leakage
     
 2. demo_Qthread_mem_leak.py
     使用了两个进程：
-    第一个进程每等待200ms发送信号给主进程，触发第二个进程
-    第二个进程等待100ms返回信号
+    第一个进程PowerUpdateTrigger， 每等待200ms发送信号给主进程，通过slot On_PowerUpdate 触发第二个进程。该进程会一直循环不停。
+    
+    第二个进程PowerUpdate，等待100ms返回信号并且结束
     
     目前都是建立的demo进程，只有空等，但是内存还是会增加，实际的case会有其他任务，内存增加也更明显
